@@ -1,8 +1,6 @@
 services:
   api:
     image: ghcr.io/dendianugerah/velld/api:latest
-    ports:
-      - "8081:8080"
     env_file:
       - .env
     volumes:
@@ -12,8 +10,6 @@ services:
 
   web:
     image: ghcr.io/dendianugerah/velld/web:latest
-    ports:
-      - "3000:3000"
     environment:
       NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
       ALLOW_REGISTER: ${ALLOW_REGISTER}
